@@ -3,16 +3,17 @@ require_relative 'Contact'
 require 'sinatra'
 
 @@rolodex = Rolodex.new
+@@crm_app_name = "My CRM"
 
 get '/' do 
-	@crm_app_name = "My CRM"
+	@@crm_app_name = "My CRM"
 	erb :index
-	
 end
 
 
 #new contact
 get '/contacts/new' do
+	@@crm_app_name = "My CRM"
   erb :new_contact
 end
 
